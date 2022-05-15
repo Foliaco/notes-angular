@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "4f440a7d-d027-4e1e-87e4-ba893295cc21": {
+      "ProjectGuid": "4f440a7d-d027-4e1e-87e4-ba893295cc21",
+      "DisplayName": "noteBackend",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

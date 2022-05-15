@@ -1,0 +1,10 @@
+<div>
+  <ul>
+    <li *ngFor="let note of notesData">
+      <h2>{{note.title}}</h2>
+      <p>{{note.body}}</p>
+      <strong *ngIfElse="note.date!==undefined; else noThere">{{note.date}}</strong>
+      <p #noThere>No hay fecha de publicacion</p>
+    </li>
+  </ul>
+</div>

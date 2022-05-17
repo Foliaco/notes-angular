@@ -1,1 +1,27 @@
-<p>edit-note works!</p>
+<style>
+  .is-invalidate{
+    border-color:red;
+  }
+  .active{
+    background:blue;
+  }
+</style>
+<div>
+  <h3>Crea una nota</h3>
+  <form [formGroup]="formNote">
+    <div>
+      <label>Title</label>
+
+      <input [class.is-invalidate]="formNote.get('title')?.touched && formNote.get('title')?.invalid"
+       type="text"
+       formControlName="title"/>
+    </div>
+    <div>
+      <label>Body</label>
+      <textarea formControlName="body">
+
+      </textarea>
+    </div>
+    <button (click)="saveNote($event)" [style.background]="isActive ? 'rgba(40,40,255)' : 'red'">save</button>
+  </form>
+</div>

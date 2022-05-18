@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { INotes } from 'src/app/interfaces/notes.interfaces';
-import data from "../../data/notes.json";
+import { UsuarioServices } from 'src/app/services/usuarios.service';
+
 @Component({
   selector: 'app-notes',
   templateUrl: './notes.component.html',
@@ -11,9 +12,9 @@ export class NotesComponent implements OnInit {
   user:string;
   notesData:INotes[];
 
-  constructor() {
+  constructor(private userServices:UsuarioServices) {
     this.user='Miguel';
-    this.notesData=data;
+    this.notesData=userServices.getNotas();
   }
 
   ngOnInit(): void {

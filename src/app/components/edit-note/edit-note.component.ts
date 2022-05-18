@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UsuarioServices } from 'src/app/services/usuarios.service';
 //import {FormControl} from "@angular/forms";
 @Component({
   selector: 'app-edit-note',
@@ -8,7 +9,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class EditNoteComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userServices:UsuarioServices) { }
 
   formNote=new FormGroup({
     title:new FormControl('',Validators.required),
@@ -16,9 +17,14 @@ export class EditNoteComponent implements OnInit {
   });
   disable:boolean=true;
   isActive:boolean=false;
+  note={
+    title:"escribe aqui tu titulo",
+    body:"Aqui tu body"
+  }
 
+  titleInput2:string='one title';
   saveNote(e:Event){
-    alert("Ok")
+    //this.userServices.setNotas({title:this.formNote.get('title'),body:this.formNote.get('body')}) //save data in note
   }
 
 

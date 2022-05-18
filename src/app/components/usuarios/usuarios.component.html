@@ -1,13 +1,41 @@
 <div>
   <h2>Usuarios Services</h2>
   <ul>
-    <li *ngFor="let persona of personas">
-      {{persona.nombre}}
-      <app-mensaje >{{persona.edad}}</app-mensaje>
-    </li>
+      <app-persona-target
+      *ngFor="let persona of personas; let i = index"
+      [persona]="persona"
+      [i]="i"
+      (outPerson)="getData($event)"
+      ></app-persona-target>
   </ul>
+
   <app-mensaje>
     <h1>Hola mundo</h1>
     <p class="my-class">Esto es un parrafo</p>
   </app-mensaje>
+  <form class="form-row p-5">
+    <div class="form-group col-md2">
+      <input type="text" [(ngModel)]="nombreInput" name="nombre" class="form-control m-2">
+    </div>
+    <div class="form-grop col-md2">
+      <input type="number" [(ngModel)]="edadInput" name="edad" class="form-control m-2">
+    </div>
+    <button class="btn btn-success" *ngIf="!edit;else editBlock"  (click)="savePersona()">Guardar</button>
+    <ng-template #editBlock >
+      <button class="btn btn-info" #editBlock (click)="editPersona()" >editar</button>
+    </ng-template>
+    <hr/>
+    <h1>Local Reference</h1>
+    <label>Refecerences</label>
+    <input type="text" class="form-control" #_nombreInput >
+    <input type="text" class="form-control" #_nombreInput2 >
+    <button (click)="helloWorld(_nombreInput)" >click</button>
+  </form>
+  <hr/>
+  <div class="p-5">
+    <h2>Pipes para dar formato</h2>
+    <strong>Pesos {{num | currency:'COP':'$':'1.2-2'}}</strong><br/>
+    <strong>Fecha y Hora {{fecha | date : 'short'}}</strong>
+  </div>
 </div>
+

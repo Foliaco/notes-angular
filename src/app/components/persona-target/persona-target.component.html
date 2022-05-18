@@ -1,0 +1,7 @@
+<li>
+  {{i+1+" "}}{{persona.nombre}}
+  <app-mensaje>{{persona.edad}}</app-mensaje>
+  <p>{{persona.edad}}</p>
+  <button class="btn btn-danger" (click)="deletePersona(persona.nombre)">x</button>
+  <button class="btn btn-info mx-2 text-white" (click)="editPersona(persona)">edit</button>
+</li>

@@ -67,6 +67,14 @@ export class UsuariosComponent implements OnInit {
     this.nombreInput="";
   }
   ngOnInit(): void {
+    this.usuarioServices.obtenerUsuarios()
+    .subscribe(
+      (person:PersonaModel[]): void=>
+      {
+        console.log(person)
+        //this.personas=person;
+      }
+    )
   }
 
 }

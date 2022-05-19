@@ -1,3 +1,4 @@
+
 <div>
   <h2>Usuarios Services</h2>
   <ul>
@@ -18,7 +19,7 @@
       <input type="text" [(ngModel)]="nombreInput" name="nombre" class="form-control m-2">
     </div>
     <div class="form-grop col-md2">
-      <input type="number" [(ngModel)]="edadInput" name="edad" class="form-control m-2">
+      <input [(ngModel)]="edadInput" appNumbersOnly name="edad" class="form-control m-2">
     </div>
     <button class="btn btn-success" *ngIf="!edit;else editBlock"  (click)="savePersona()">Guardar</button>
     <ng-template #editBlock >

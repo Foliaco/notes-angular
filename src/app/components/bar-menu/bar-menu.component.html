@@ -3,9 +3,11 @@
 
   <nav>
     <ul>
-      <li>Inicio</li>
-      <li>Crear Nota</li>
-      <li>Buscar Nota</li>
+      <li (click)="page()" >home</li>
+      <li (click)="page('new')" >page1</li>
+      <li (click)="page('new')" >Buscar Nota</li>
+      <li><a [routerLink]="['/new',3]" >parmas</a></li>
+      <a [routerLink]="['/new',3]" [queryParams]="{buscar:'anyperson'}">Query</a>
     </ul>
   </nav>
 </header>

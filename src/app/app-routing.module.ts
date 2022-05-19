@@ -5,8 +5,9 @@ import { Page2Component } from './components/page2/page2.component';
 
 const routes: Routes = [
   { path:'', component:Page1Component },
-  {path:'new',component:Page2Component},
-  {path:'new/:id',component:Page2Component}
+  {path:'new',component:Page2Component,children:[
+    {path:':id',component:Page2Component}
+  ]},
 ];
 
 @NgModule({

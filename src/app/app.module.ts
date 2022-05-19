@@ -14,6 +14,8 @@ import { QueryContentComponent } from './components/query-content/query-content.
 import { PersonaTargetComponent } from './components/persona-target/persona-target.component';
 import { Page2Component } from './components/page2/page2.component';
 import { Page1Component } from './components/page1/page1.component';
+import { NumbersOnlyDirective } from './directives/numbers-only.directive';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,14 +27,16 @@ import { Page1Component } from './components/page1/page1.component';
     QueryContentComponent,
     PersonaTargetComponent,
     Page2Component,
-    Page1Component
+    Page1Component,
+    NumbersOnlyDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
